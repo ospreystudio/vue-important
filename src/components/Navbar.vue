@@ -6,6 +6,8 @@
       <router-link to="/func">Функции</router-link>
       <router-link to="/array">Массивы</router-link>
       <router-link to="/prem">PropsEmit</router-link>
+      <router-link to="/server">Server</router-link>
+      <router-link to="/sorting">сортировка</router-link>
 
       <a href="#">Contact</a>
     </nav>

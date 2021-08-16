@@ -2,21 +2,14 @@
   <div class="app">
     <h1>Страница с постами</h1>
 
-<div class="app_btns">
-  <my-button @click="showDialog">Создать пользователя</my-button>
-  <my-select
-  v-model="selectedSort"
-  :options="sortOptions"
-  />
-</div>
+    <my-button @click="fetchPosts">Получить посты</my-button>
 
+    <my-button @click="showDialog">Создать пользователя</my-button>
+    <my-dialog v-model:show="dialogVisible">
+      <post-form @create="createPost"></post-form>
+    </my-dialog>
 
-
-  <my-dialog v-model:show="dialogVisible">
-    <post-form @create="createPost"></post-form>
-  </my-dialog>
-
-  <post-list :posts="sortedPost" @remove="removePost" v-if="!isPostsLoading"></post-list>
+    <post-list :posts="posts" @remove="removePost" v-if="!isPostsLoading"></post-list>
     <div v-else>Идёт загрузка... </div>
   </div>
 </template>
@@ -37,16 +30,6 @@ export default {
       posts: [],
       dialogVisible: false,
       isPostsLoading: false,
-      selectedSort: '',
-      sortOptions: [
-        {
-          value: 'title', name: 'По названию'
-        },
-        {
-          value: 'body', name: 'По содержимому'
-        }
-      ]
-
     }
   },
 
@@ -68,37 +51,20 @@ export default {
         this.posts = response.data;
       } catch (e) {
         alert('Ошибка')
-     } finally {
+      } finally {
         this.isPostsLoading = false
       }
     }
   },
   mounted() {
     this.fetchPosts()
-  },
-  computed: {
-    sortedPost() {
-      return [...this.posts].sort((post1, post2) => post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]))
-    }
-  },
-    // сортировка с помощью оюъека watch
-  // watch: {
-  //   selectedSort(newValue){
-  //       this.posts.sort((post1, post2) => {
-  //         return post1[this.selectedSort]?.localeCompare(post2[this.selectedSort])
-  //       })
-  //   }
-  // }
+  }
 }
-
 </script>
 
 <style scoped>
 
-.app_btns {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 
 </style>

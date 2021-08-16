@@ -3,6 +3,8 @@ import Home from "../pages/Home";
 import Arrays from "../components/Arrays";
 import Function from "../components/Functions"
 import PropsEmmit from "../components/PropsEmmit";
+import Server from "../components/Server";
+import SortedPosts from "../components/SortedPosts";
 
 const routes = [
   {
@@ -25,6 +27,17 @@ const routes = [
     name: '',
     component: PropsEmmit
   },
+  {
+    path: '/server',
+    name: '',
+    component: Server
+  },
+  {
+    path: '/sorting',
+    name: '',
+    component: SortedPosts
+  },
+
 
 
 ]
