@@ -5,6 +5,7 @@
       <router-link to="/">vue-3</router-link>
       <router-link to="/func">Функции</router-link>
       <router-link to="/array">Массивы</router-link>
+      <router-link to="/prem">PropsEmit</router-link>
 
       <a href="#">Contact</a>
     </nav>

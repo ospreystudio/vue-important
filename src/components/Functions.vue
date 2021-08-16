@@ -1,15 +1,17 @@
 <template>
   <div class="content">
-    <button @click="addLike">Like</button>
-    <button @click="addDislike" style="margin: 1rem">Dislike</button>
+    <my-button @click="addLike">Like</my-button>
+    <my-button @click="addDislike" style="margin: 1rem">Dislike</my-button>
     <div>Кол-во лайков <strong> {{ likes }} </strong></div>
     <div>Кол-во Дизлайков <strong> {{ dislikes }} </strong></div>
   </div>
 </template>
 
 <script>
+import MyButton from "./UI/MyButton";
 export default {
   name: "Arrays",
+  components: {MyButton},
   data() {
     return {
       likes: 0,

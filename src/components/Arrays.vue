@@ -22,7 +22,14 @@ export default {
 </script>
 
 <style scoped>
-
+.post {
+  padding: 15px;
+  border: 2px solid cornflowerblue;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 
 </style>

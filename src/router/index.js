@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from "../pages/Home";
 import Arrays from "../components/Arrays";
 import Function from "../components/Functions"
+import PropsEmmit from "../components/PropsEmmit";
 
 const routes = [
   {
@@ -19,6 +20,12 @@ const routes = [
     name: '',
     component: Function
   },
+  {
+    path: '/prem',
+    name: '',
+    component: PropsEmmit
+  },
+
 
 ]
 

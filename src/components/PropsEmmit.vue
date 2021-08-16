@@ -2,11 +2,11 @@
   <div class="app">
     <h1>Страница с постами</h1>
     <my-button @click="showDialog">Создать пользователя</my-button>
-  <my-dialog v-model:show="dialogVisible">
-    <post-form @create="createPost"></post-form>
-  </my-dialog>
+    <my-dialog v-model:show="dialogVisible">
+      <post-form @create="createPost"></post-form>
+    </my-dialog>
 
-  <post-list :posts="posts" @remove="removePost"></post-list>
+    <post-list :posts="posts" @remove="removePost"></post-list>
   </div>
 </template>
 
