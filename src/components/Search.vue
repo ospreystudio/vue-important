@@ -6,21 +6,21 @@
         placeholder="Поиск..."
     />
 
-<div class="app_btns">
-  <my-button @click="showDialog">Создать пользователя</my-button>
-  <my-select
-  v-model="selectedSort"
-  :options="sortOptions"
-  />
-</div>
+    <div class="app_btns">
+      <my-button @click="showDialog">Создать пользователя</my-button>
+      <my-select
+          v-model="selectedSort"
+          :options="sortOptions"
+      />
+    </div>
 
 
 
-  <my-dialog v-model:show="dialogVisible">
-    <post-form @create="createPost"></post-form>
-  </my-dialog>
+    <my-dialog v-model:show="dialogVisible">
+      <post-form @create="createPost"></post-form>
+    </my-dialog>
 
-  <post-list :posts="sortedAndSearchedPost" @remove="removePost" v-if="!isPostsLoading"></post-list>
+    <post-list :posts="sortedAndSearchedPost" @remove="removePost" v-if="!isPostsLoading"></post-list>
     <div v-else>Идёт загрузка... </div>
   </div>
 </template>
@@ -73,7 +73,7 @@ export default {
         this.posts = response.data;
       } catch (e) {
         alert('Ошибка')
-     } finally {
+      } finally {
         this.isPostsLoading = false
       }
     }
@@ -89,7 +89,7 @@ export default {
       return this.sortedPost.filter(post => post.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
     }
   },
-    // сортировка с помощью оюъека watch
+  // сортировка с помощью оюъека watch
   // watch: {
   //   selectedSort(newValue){
   //       this.posts.sort((post1, post2) => {

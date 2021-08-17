@@ -8,6 +8,7 @@
       <router-link to="/prem">PropsEmit</router-link>
       <router-link to="/server">Server</router-link>
       <router-link to="/sorting">сортировка</router-link>
+      <router-link to="/search">поиск</router-link>
 
       <a href="#">Contact</a>
     </nav>

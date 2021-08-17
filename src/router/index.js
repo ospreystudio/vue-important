@@ -5,6 +5,7 @@ import Function from "../components/Functions"
 import PropsEmmit from "../components/PropsEmmit";
 import Server from "../components/Server";
 import SortedPosts from "../components/SortedPosts";
+import Search from "../components/Search";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/sorting',
     name: '',
     component: SortedPosts
+  },
+  {
+    path: '/search',
+    name: '',
+    component: Search
   },
 
 
