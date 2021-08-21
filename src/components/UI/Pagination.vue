@@ -6,30 +6,30 @@
         placeholder="Поиск..."
     />
 
-<div class="app_btns">
-  <my-button @click="showDialog">Создать пользователя</my-button>
-  <my-select
-  v-model="selectedSort"
-  :options="sortOptions"
-  />
-</div>
+    <div class="app_btns">
+      <my-button @click="showDialog">Создать пользователя</my-button>
+      <my-select
+          v-model="selectedSort"
+          :options="sortOptions"
+      />
+    </div>
 
 
 
-  <my-dialog v-model:show="dialogVisible">
-    <post-form @create="createPost"></post-form>
-  </my-dialog>
+    <my-dialog v-model:show="dialogVisible">
+      <post-form @create="createPost"></post-form>
+    </my-dialog>
 
-  <post-list :posts="sortedAndSearchedPost" @remove="removePost" v-if="!isPostsLoading"></post-list>
+    <post-list :posts="sortedAndSearchedPost" @remove="removePost" v-if="!isPostsLoading"></post-list>
     <div v-else>Идёт загрузка... </div>
 
     <div class="page_wrapper">
       <div v-for="pageNumber in totalPages"
-            :key="pageNumber"
-            class="page"
-            :class="{'current-page' : page === pageNumber}"
-            @click="changePage(pageNumber)"
-            > {{ pageNumber }}
+           :key="pageNumber"
+           class="page"
+           :class="{'current-page' : page === pageNumber}"
+           @click="changePage(pageNumber)"
+      > {{ pageNumber }}
 
       </div>
     </div>
@@ -39,8 +39,8 @@
 <script>
 
 import axios from "axios"
-import PostList from "../components/dicomposition/PostList";
-import PostForm from "../components/dicomposition/PostForm";
+import PostList from "../dicomposition/PostList";
+import PostForm from "../dicomposition/PostForm";
 export default {
   components: {
     PostForm,
@@ -88,16 +88,16 @@ export default {
       try {
         this.isPostsLoading = true
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
-            params: {
-              _page: this.page,
-              _limit: this.limit
-            }
+          params: {
+            _page: this.page,
+            _limit: this.limit
+          }
         })
         this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit)
         this.posts = response.data;
       } catch (e) {
         alert('Ошибка')
-     } finally {
+      } finally {
         this.isPostsLoading = false
       }
     }
@@ -113,7 +113,7 @@ export default {
       return this.sortedPost.filter(post => post.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
     }
   },
-    // сортировка с помощью оюъека watch
+  // сортировка с помощью оюъека watch
   // watch: {
   //   selectedSort(newValue){
   //       this.posts.sort((post1, post2) => {

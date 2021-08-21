@@ -9,6 +9,7 @@
       <router-link to="/server">Server</router-link>
       <router-link to="/sorting">сортировка</router-link>
       <router-link to="/search">поиск</router-link>
+      <router-link to="/search">пагинация</router-link>
 
       <a href="#">Contact</a>
     </nav>

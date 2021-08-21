@@ -6,6 +6,8 @@ import PropsEmmit from "../components/PropsEmmit";
 import Server from "../components/Server";
 import SortedPosts from "../components/SortedPosts";
 import Search from "../components/Search";
+import Pagination from "../components/UI/Pagination";
+
 
 const routes = [
   {
@@ -43,6 +45,12 @@ const routes = [
     name: '',
     component: Search
   },
+  {
+    path: '/pagination',
+    name: '',
+    component: Pagination
+  },
+
 
 
 
