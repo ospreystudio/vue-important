@@ -8,6 +8,7 @@ import SortedPosts from "../components/SortedPosts";
 import Search from "../components/Search";
 import Pagination from "../components/UI/Pagination";
 import Autopost from "../components/Autopost";
+import PostIdPage from "../components/PostIdPage";
 
 
 const routes = [
@@ -15,6 +16,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/posts/:id',
+    name: 'PostIdPage',
+    component: PostIdPage
   },
   {
     path: '/array',
