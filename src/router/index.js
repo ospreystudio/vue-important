@@ -7,6 +7,7 @@ import Server from "../components/Server";
 import SortedPosts from "../components/SortedPosts";
 import Search from "../components/Search";
 import Pagination from "../components/UI/Pagination";
+import Autopost from "../components/Autopost";
 
 
 const routes = [
@@ -49,6 +50,11 @@ const routes = [
     path: '/pagination',
     name: '',
     component: Pagination
+  },
+  {
+    path: '/autopost',
+    name: '',
+    component: Autopost
   },
 
 
