@@ -11,6 +11,7 @@
       <router-link to="/search">поиск</router-link>
       <router-link to="/search">пагинация</router-link>
       <router-link to="/autopost">автопост</router-link>
+      <router-link to="/store">store</router-link>
 
       <a href="#">Contact</a>
     </nav>

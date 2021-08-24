@@ -9,6 +9,7 @@ import Search from "../components/Search";
 import Pagination from "../components/UI/Pagination";
 import Autopost from "../components/Autopost";
 import PostIdPage from "../components/PostIdPage";
+import PostPageWithStore from "../components/PostPageWithStore";
 
 
 const routes = [
@@ -62,6 +63,12 @@ const routes = [
     name: '',
     component: Autopost
   },
+  {
+    path: '/store',
+    name: '',
+    component: PostPageWithStore
+  },
+
 
 
 
