@@ -28,21 +28,20 @@
     <div v-else>Идёт загрузка... </div>
     <div v-intersection="loadMorePosts" ref="observer"></div>
 
-        <div class="page_wrapper">
-          <div v-for="pageNumber in totalPages"
-                :key="pageNumber"
-                class="page"
-                :class="{'current-page' : page === pageNumber}"
-                @click="changePage(pageNumber)"
-                > {{ pageNumber }}
+    <div class="page_wrapper">
+      <div v-for="pageNumber in totalPages"
+           :key="pageNumber"
+           class="page"
+           :class="{'current-page' : page === pageNumber}"
+           @click="changePage(pageNumber)"
+      > {{ pageNumber }}
 
-          </div>
-        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-
 import { mapGetters, mapActions, mapMutations, mapState } from 'vuex'
 import PostList from "../components/dicomposition/PostList";
 import PostForm from "../components/dicomposition/PostForm";
@@ -57,7 +56,6 @@ export default {
       dialogVisible: false
     }
   },
-
   methods: {
     ...mapMutations({
       setPage: 'post/setPage',
@@ -80,7 +78,7 @@ export default {
     },
   },
   mounted() {
-   this.fetchPosts();
+    this.fetchPosts();
   },
   computed: {
     ...mapState({
@@ -107,37 +105,28 @@ export default {
   //   }
   // }
 }
-
 </script>
 
 <style scoped>
-
 .app_btns {
   display: flex;
   justify-content: space-between;
 }
-
 .page_wrapper {
   display: flex;
   margin-top: 15px;
 }
-
 .page {
   border: 1px solid lightblue;
   padding: 10px;
   margin-right: 5px;
   cursor: pointer;
 }
-
 .current-page {
   border: 2px solid #0074D9;
 }
-
 .observer {
   height: 30px;
   background: #0074D9;
-
 }
-
-
 </style>

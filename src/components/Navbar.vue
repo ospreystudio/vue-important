@@ -12,8 +12,8 @@
       <router-link to="/search">пагинация</router-link>
       <router-link to="/autopost">автопост</router-link>
       <router-link to="/store">store</router-link>
+      <router-link to="/composition">CompositionAPI</router-link>
 
-      <a href="#">Contact</a>
     </nav>
 
     <div id="content">

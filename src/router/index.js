@@ -10,6 +10,7 @@ import Pagination from "../components/UI/Pagination";
 import Autopost from "../components/Autopost";
 import PostIdPage from "../components/PostIdPage";
 import PostPageWithStore from "../components/PostPageWithStore";
+import PostPageCompositionAPI from "../components/PostPageCompositionAPI";
 
 
 const routes = [
@@ -68,6 +69,13 @@ const routes = [
     name: '',
     component: PostPageWithStore
   },
+
+  {
+    path: '/composition',
+    name: '',
+    component: PostPageCompositionAPI
+  },
+
 
 
 
